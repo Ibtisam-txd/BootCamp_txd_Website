@@ -144,3 +144,45 @@
     margin-right: 10px; 
   }
   
+  /* About Page Styles */
+.about-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-container h2 {
+  margin-top: 20px;
+  color: #0047AB;
+}
+
+.about-container ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.about-container ul li {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px 0;
+  background-color: #0047AB;
+  color: white;
+}

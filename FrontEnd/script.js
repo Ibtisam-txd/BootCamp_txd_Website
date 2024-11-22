@@ -11,25 +11,6 @@ document.querySelectorAll('header nav a').forEach(anchor => {
     });
   });
   
-  // Form Validation for Login
-  if (document.querySelector('.login-container')) {
-    const loginForm = document.querySelector('.login-container form');
-    loginForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const username = loginForm.querySelector('input[type="text"]').value.trim();
-      const password = loginForm.querySelector('input[type="password"]').value.trim();
-  
-      if (!username || !password) {
-        alert('Please fill in all fields.');
-      } else if (password.length < 6) {
-        alert('Password must be at least 6 characters.');
-      } else {
-        alert('Login successful!');
-        window.location.href = "index.html";
-      }
-    });
-  }
-  
   // Login Form Validation and Redirect
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("login-form");
