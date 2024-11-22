@@ -1,6 +1,7 @@
 import { User } from "../models/user.model.js";
 import bcrypt from 'bcryptjs';
 import verifyToken from "../middleware/validation.middleware.js";
+import checkUniqueFields from '../middleware/uniqueValidation.middleware.js';
 import express from 'express';
 import jwt from 'jsonwebtoken';
 
@@ -9,14 +10,14 @@ const router = express.Router();
 
 
 // User registration
-router.post('/register', async (req, res) => {
+router.post('/register',checkUniqueFields, async (req, res) => {
     try {
-        console.log('testing resisgrerr', req.body);
+        // console.log('testing resisgrerr', req.body);
       const { email, password, username } = req.body;
       if(!email, !password, !username) {
         res.status(500).json({ error: 'Email, Password and Username is required' });
       }
-        console.log( username,email,password)
+        // console.log( username,email,password)
       // Check if the email already exists
       const existingUser = await User.findOne({ email });
       if (existingUser) {
