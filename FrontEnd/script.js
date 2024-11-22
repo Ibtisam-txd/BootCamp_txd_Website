@@ -1,4 +1,16 @@
 
+// Smooth Scroll for Navigation Links
+document.querySelectorAll("header nav a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
+});
 
 // Login Form Validation and Redirect
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,18 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Registration Form Validation
+  // Registration Form Validation and API Integration
   const registerForm = document.getElementById("register-form");
   if (registerForm) {
-    registerForm.addEventListener("submit", function (e) {
+    registerForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const fullname = document.getElementById("fullname").value.trim();
+      const username = document.getElementById("fullname").value.trim();
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("register-password").value.trim();
-      const confirmPassword = document.getElementById("confirm-password").value.trim();
 
-      if (!fullname || !email || !password || !confirmPassword) {
+      if (!username || !email || !password) {
         alert("Please fill in all fields.");
         return;
       }
@@ -52,14 +63,42 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
-      }
+      // Log data being sent to the backend
+      console.log({ username, email, password });
 
-      // Simulate successful registration
-      alert("Registration successful!");
-      window.location.href = "login.html"; // Redirect to the login page
+      // Make API request to backend
+      try {
+        console.log("hello");
+    
+        const response = await fetch('http://localhost:5000/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username, // Ensure the backend expects `fullname`
+                email,
+                password,
+            }),
+        });
+        console.log("happy")
+        if (!response.ok) {
+            // If the response is not ok, handle the error
+            const errorData = await response.json();
+            throw new Error(errorData.message || "An error occurred during registration.");
+        }
+    
+        const data = await response.json(); // Parse the JSON response
+        alert(data.message || "Registration successful!");
+        window.location.href = "login.html"; // Redirect to the login page
+    } catch (error) {
+        console.error("Registration Error:", error);
+        alert(error.message || "An unexpected error occurred.");
+    }
+    
     });
   }
 });
+
+
+
