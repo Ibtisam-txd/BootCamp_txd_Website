@@ -11,6 +11,7 @@ body {
 }
 
 /* Header */
+/* Header */
 header {
   background-color: #0047AB;
   color: white;
@@ -21,8 +22,12 @@ header {
 }
 
 header .logo {
-  font-size: 1.5rem;
+  font-family: 'Bangers', sans-serif; /* Comic-style funky font */
+  font-size: 2.5rem;
   font-weight: bold;
+  color: white;
+  text-transform: uppercase; /* Adding a bold, uppercase effect */
+  letter-spacing: 2px; /* Adding some spacing between letters */
   display: flex;
   align-items: center;
 }
@@ -203,5 +208,83 @@ form button {
 }
 
 form button:hover {
+  background-color: #003580;
+}
+
+
+/* Login Page Styles */
+.login-container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+  color: #0047AB;
+  font-size: 2rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-container button {
+  background-color: #0047AB;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.login-container button:hover {
+  background-color: #003580;
+}
+
+/* Registration Button Styling */
+.login-container p {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.login-container button#register-btn {
+  background-color: transparent;
+  color: #0047AB;
+  border: 1px solid #0047AB;
+  padding: 8px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-container button#register-btn:hover {
+  background-color: #0047AB;
+  color: white;
+}
+
+/* Home Button Styling */
+.home-btn {
+  background-color: #0047AB;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.home-btn:hover {
   background-color: #003580;
 }
