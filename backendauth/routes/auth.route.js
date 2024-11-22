@@ -6,11 +6,17 @@ import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 
+
+
 // User registration
 router.post('/register', async (req, res) => {
     try {
+        console.log('testing resisgrerr', req.body);
       const { email, password, username } = req.body;
-  
+      if(!email, !password, !username) {
+        res.status(500).json({ error: 'Email, Password and Username is required' });
+      }
+        console.log( username,email,password)
       // Check if the email already exists
       const existingUser = await User.findOne({ email });
       if (existingUser) {
@@ -19,12 +25,13 @@ router.post('/register', async (req, res) => {
   
       // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
-  
+      console.log('here creatging User');
       // Create a new user
-      const newUser = new User({ username, email, password: hashedPassword });
+      const newUser = await User.create({ username, email, password: hashedPassword });
+      console.log(newUser, 'neww===>');
       await newUser.save();
   
-      res.status(201).json({ message: 'User registered successfully' });
+      res.status(201).json({ message: 'User registered successfully', user: newUser });
     } catch (error) {
       res.status(500).json({ error: 'Internal server error' });
     }
@@ -33,10 +40,11 @@ router.post('/register', async (req, res) => {
   // User login
   router.post('/login', async (req, res) => {
     try {
-      const { email, password } = req.body;
-  
+      const { username, password } = req.body;
+        console.log("Hello Login Page");
+        res.send("Login Page");
       // Check if the email exists
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ username });
       if (!user) {
         return res.status(401).json({ error: 'Invalid credentials' });
       }
