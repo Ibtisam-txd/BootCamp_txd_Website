@@ -1,151 +1,146 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  /* Header */
-  header {
-    background-color: #0047AB;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-  }
-  
-  header nav a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(45deg, #6b7ae0, #91b5f9);
-    color: white;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero p {
-    margin: 20px 0;
-    font-size: 1.2rem;
-  }
-  
-  .hero button {
-    background-color: white;
-    color: #0047AB;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .hero button:hover {
-    background-color: #f4f4f4;
-  }
-  
-  /* Features Section */
-  .features {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .features div {
-    text-align: center;
-    padding: 10px;
-    flex: 1;
-  }
-  
-  .features div img {
-    width: 300px;
-    height: 250px;
-    margin-bottom: 10px;
-  }
-  
-  .features div h3 {
-    font-size: 1.2rem;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-  }
-  
-  /* Login Page */
-  .login-container {
-    background: white;
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .login-container h1 {
-    margin-bottom: 20px;
-    color: #0047AB;
-  }
-  
-  .login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .login-container button {
-    background-color: #0047AB;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .login-container button:hover {
-    background-color: #003580;
-  }
-  
-  header .logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-  
-  header .logo img {
-    margin-right: 10px; 
-  }
-  
-  /* About Page Styles */
-.about-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #0047AB;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  margin-right: 10px;
+  height: 50px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(45deg, #6b7ae0, #91b5f9);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.hero button {
+  background-color: white;
+  color: #0047AB;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #f4f4f4;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.features div {
+  text-align: center;
+  padding: 10px;
+  flex: 1;
+}
+
+.features div img {
+  width: 300px;
+  height: 250px;
+  margin-bottom: 10px;
+}
+
+.features div h3 {
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+/* Login & Registration Forms */
+.login-container, .register-container {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h1, .register-container h1 {
+  margin-bottom: 20px;
+  color: #0047AB;
+}
+
+.login-container input, .register-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login-container button, .register-container button {
+  background-color: #0047AB;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover, .register-container button:hover {
+  background-color: #003580;
+}
+
+/* About & Contact Page Styles */
+.about-container, .contact-container {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
@@ -154,13 +149,13 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.about-container h1 {
+.about-container h1, .contact-container h1 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.about-container p {
+.about-container p, .contact-container p {
   line-height: 1.6;
   margin-bottom: 15px;
 }
@@ -177,36 +172,6 @@
 
 .about-container ul li {
   margin-bottom: 10px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 50px;
-  padding: 10px 0;
-  background-color: #0047AB;
-  color: white;
-}
-
-/* Contact Page Styles */
-.contact-container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.contact-container h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.contact-container p {
-  text-align: center;
-  margin-bottom: 30px;
-  line-height: 1.6;
 }
 
 form {
