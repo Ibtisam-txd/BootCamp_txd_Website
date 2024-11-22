@@ -4,13 +4,14 @@ import verifyToken from "../middleware/validation.middleware.js";
 import checkUniqueFields from '../middleware/uniqueValidation.middleware.js';
 import express from 'express';
 import jwt from 'jsonwebtoken';
+import cors from 'cors';
 
 const router = express.Router();
 
 
 
 // User registration
-router.post('/register',checkUniqueFields, async (req, res) => {
+router.post('/register',cors(), checkUniqueFields, async (req, res) => {
     try {
         // console.log('testing resisgrerr', req.body);
       const { email, password, username } = req.body;
