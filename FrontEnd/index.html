@@ -16,8 +16,8 @@
       <nav>
         <a href="#">Home</a>
         <a href="./about.html">About</a>
-        <a href="./login.html">Login</a>
         <a href="./contact.html">Contact</a>
+        <a href="#" id="logout">Logout</a>
       </nav>
     </header>
     <section class="hero">
@@ -39,8 +39,51 @@
         <h3>Community Support</h3>
       </div>
     </section>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="toast" id="toast">
+      <span>Are you sure you want to logout?</span>
+      <button id="confirmLogout">Yes</button>
+      <button id="cancelLogout">No</button>
+    </div>
+    
     <footer>
       <p>&copy; 2024 Bootcamp-TXD. All Rights Reserved.</p>
     </footer>
   </body>
+  <script>
+     document.addEventListener("DOMContentLoaded", () => {
+      const logoutBtn = document.getElementById("logout");
+      const toast = document.getElementById("toast");
+      const overlay = document.getElementById("overlay");
+      const confirmLogout = document.getElementById("confirmLogout");
+      const cancelLogout = document.getElementById("cancelLogout");
+
+      // Show toast and overlay
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default action
+        toast.classList.add("show");
+        overlay.classList.add("show");
+      });
+
+      // Confirm logout
+      confirmLogout.addEventListener("click", () => {
+        alert("You have been logged out!"); // Replace with actual logout logic
+        toast.classList.remove("show");
+        overlay.classList.remove("show");
+      });
+
+      // Cancel logout
+      cancelLogout.addEventListener("click", () => {
+        toast.classList.remove("show");
+        overlay.classList.remove("show");
+      });
+
+      // Hide toast when overlay is clicked
+      overlay.addEventListener("click", () => {
+        toast.classList.remove("show");
+        overlay.classList.remove("show");
+      });
+    });
+  </script>
 </html>
