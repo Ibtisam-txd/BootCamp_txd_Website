@@ -88,4 +88,32 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Logout Section Code
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutBtn = document.getElementById("logout");
+  const toast = document.getElementById("toast");
+  const confirmLogout = document.getElementById("confirmLogout");
+  const cancelLogout = document.getElementById("cancelLogout");
+
+  // Show toast on logout click
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default navigation
+    toast.classList.add("show");
+  });
+
+  // Confirm logout
+  confirmLogout.addEventListener("click", () => {
+    alert("You have been logged out successfully!"); // Replace with logout logic
+    window.location.href = "./login.html"; // Redirect to login page
+  });
+
+  // Cancel logout
+  cancelLogout.addEventListener("click", () => {
+    toast.classList.remove("show");
+  });
+});
+
+
+
 
