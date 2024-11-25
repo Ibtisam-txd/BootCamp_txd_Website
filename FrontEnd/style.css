@@ -168,6 +168,10 @@ footer {
 .about-container h2 {
   margin-top: 20px;
   color: #0047AB;
+  margin: 30px 10px 30px 0px;
+  border: 2px solid;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .about-container ul {
@@ -177,6 +181,10 @@ footer {
 
 .about-container ul li {
   margin-bottom: 10px;
+  list-style-type: none;
+}
+.social-icon:hover{
+  transform: scale(1.2);
 }
 
 form {
