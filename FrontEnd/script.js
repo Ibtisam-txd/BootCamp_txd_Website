@@ -86,14 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-<<<<<<< HEAD
- 
- 
- 
- 
- 
-=======
-
 
 // Logout Section Code
 
@@ -120,8 +112,3 @@ document.addEventListener("DOMContentLoaded", () => {
     toast.classList.remove("show");
   });
 });
-
-
-
-
->>>>>>> cb22273d17db9a46468129118e1ac308b088a01d
